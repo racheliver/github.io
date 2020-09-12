@@ -66,30 +66,30 @@ $(document).ready(function(){
   AOS.init();
   menuBarDropdown();
   
-  $.post('php/likes.php' , {'getCounter':'1'} , function(dataCounter){
-        console.log("is " + dataCounter);
-        $('#likeCount').html("Page likes: " + dataCounter);
-});
-  $('#clickLike').click(function(){
-       $.post('php/likes.php', {'ipLike':'1'}, function(ip){
-           console.log("before "+ip);
-             if(ip != "l1"){
-                   $.post('php/likes.php' , {'getCounter':'1'} , function(dataCounter){
-                        if(dataCounter){
-                            counterLike = dataCounter;
-                            console.log("is " + counterLike);
-                            $('#likeCount').html("Page likes: " + counterLike);
-                        }else{
-                            $('#likeCount').html("Page s: ");
-                        }
-                    });
-             }else{
-                 console.log('You alerady like the page before!');
-                 if(ip == "l1")
-                    $('#likeCount').html("You alerady like the page before!");
-             }
-        });
-  });
+//   $.post('php/likes.php' , {'getCounter':'1'} , function(dataCounter){
+//         console.log("is " + dataCounter);
+//         $('#likeCount').html("Page likes: " + dataCounter);
+// });
+  // $('#clickLike').click(function(){
+  //      $.post('php/likes.php', {'ipLike':'1'}, function(ip){
+  //          console.log("before "+ip);
+  //            if(ip != "l1"){
+  //                  $.post('php/likes.php' , {'getCounter':'1'} , function(dataCounter){
+  //                       if(dataCounter){
+  //                           counterLike = dataCounter;
+  //                           console.log("is " + counterLike);
+  //                           $('#likeCount').html("Page likes: " + counterLike);
+  //                       }else{
+  //                           $('#likeCount').html("Page s: ");
+  //                       }
+  //                   });
+  //            }else{
+  //                console.log('You alerady like the page before!');
+  //                if(ip == "l1")
+  //                   $('#likeCount').html("You alerady like the page before!");
+  //            }
+  //       });
+  // });
   function menuBarDropdown(){
     var newSize = -60;
     var id = setInterval(frame, 40);
@@ -98,7 +98,7 @@ $(document).ready(function(){
         clearInterval(id);
       } else {
         newSize++; 
-        console.log(newSize);
+        // console.log(newSize);
         $( "header" ).css( "top", newSize + 'px' );
       }
     }
@@ -205,10 +205,10 @@ anime.timeline({loop: true})
         var counterBar = 1;
         var progress = 25;
         var idLoadBar = setInterval(loadFrame , 150);
-        console.log(document.getElementById('loadBar').offsetWidth + "width");
+        // console.log(document.getElementById('loadBar').offsetWidth + "width");
         function loadFrame(){
             if(progress >= document.getElementById('loadBar').offsetWidth){
-                bodyBarBox.style.display = 'none';
+                // bodyBarBox.style.display = 'none';
                  $('#loadDiv').css('z-index','14');
                  $('.grid-item').css('z-index','14');
               $('body').css('overflow', 'scroll');
@@ -218,7 +218,7 @@ anime.timeline({loop: true})
             }else{
                 progress += 4;
                 counterBar += 25;
-                prg.style.width = progress + 'px';
+                // prg.style.width = progress + 'px';
                 // percent.innerHTML = counterBar + '%';
                 
                 
@@ -357,20 +357,20 @@ $("#burger").click(function(){
     }
 
     scroll_pos = $(document).scrollTop();
-    if(scroll_pos >= x.top) {
-        $(".nav .nav-btn .btn-bar").css('background', 'black');
-    } else {
-        $(".nav .nav-btn .btn-bar").css('background', 'white');
-    }
+    // if(scroll_pos >= x.top) {
+    //     $(".nav .nav-btn .btn-bar").css('background', 'black');
+    // } else {
+    //     $(".nav .nav-btn .btn-bar").css('background', 'white');
+    // }
     console.log('click');
     console.log("scr " + scroll_pos);
-    if(scroll_pos >= x.top && navFlag == false) {
+    // if(scroll_pos >= x.top && navFlag == false) {
 
-        $(".nav .nav-btn .btn-bar").css('background', 'white');
-    } 
-    if(scroll_pos >= x.top && navFlag == true) {
-        $(".nav .nav-btn .btn-bar").css('background', 'black');
-    } 
+    //     $(".nav .nav-btn .btn-bar").css('background', 'white');
+    // } 
+    // if(scroll_pos >= x.top && navFlag == true) {
+    //     $(".nav .nav-btn .btn-bar").css('background', 'black');
+    // } 
 
 });
 $(".navMenu").click(function(){
@@ -386,16 +386,16 @@ $(document).scroll(function() {
     scroll_pos = $(this).scrollTop();
     
     
-    if(scroll_pos >= x.top) {
-        $(".nav .nav-btn .btn-bar").css('background', 'black');
-    } else {
-        $(".nav .nav-btn .btn-bar").css('background', 'white');
-    }
-    if(scroll_pos >= x.top && navFlag == false) {
-        console.log(x.top);
-        console.log(scroll_pos);
-        $(".nav .nav-btn .btn-bar").css('background', 'white');
-    } 
+    // if(scroll_pos >= x.top) {
+    //     $(".nav .nav-btn .btn-bar").css('background', 'black');
+    // } else {
+    //     $(".nav .nav-btn .btn-bar").css('background', 'white');
+    // }
+    // if(scroll_pos >= x.top && navFlag == false) {
+    //     console.log(x.top);
+    //     console.log(scroll_pos);
+    //     $(".nav .nav-btn .btn-bar").css('background', 'white');
+    // } 
 
 });
 
